@@ -10,13 +10,74 @@
 
 
 
+
 body{
-    background-color:blanchedalmond ;
+    background-color:rgb(245, 244, 215) ;
     margin: 0;
 }
 #el_header{
     background-color:rgb(245, 244, 215);
+    height:420px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+#quien_soy{
+    background-color:rgb(240, 240, 199);
+}
+
+#quien_soy_container{
+    display:flex;
+    width: 100vw;
+    justify-content:space-evenly;
+    align-items: center;
+
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+#noticias_container{
+    background-color:rgb(245, 244, 215);
+    display:flex;
+    width: 100vw;
+    justify-content:space-around;
+    align-items:center;
+
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+.noticias{
+    width:300px;
+    height:260px;
+}
+
+.articulo{
+    width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+
+}
+
+.modelo{
+    margin-left: 30px;
+}
+#texto_quiensoy{
+    margin: 35px;
+    font-size: 25px;
 }
 
 #call_to_action {
@@ -27,7 +88,8 @@ body{
 #call_to_action_conainer {
     display:flex;
     width: 100vw;
-    justify-content: space-around;
+    justify-content: space-around; 
+
     @media only screen and (max-width: 600px) {
         flex-direction: column;
         align-items: center;
@@ -49,6 +111,23 @@ body{
     text-align: center;
     margin-top:0;
 }
+
+.LetraChica{ /*Esto es una clase*/
+    
+    font-size: 20px;
+    color:rgb(3, 3, 21);
+    text-align: center;
+    margin-top:0;
+
+}
+
+.LetraLink{
+    font-size: 20px;
+    text-align: center;
+    margin-top:0;
+
+}
+
 .paddingTop{
     padding-top: 40px;
 }
@@ -66,6 +145,32 @@ body{
 
 }
 
+.imagen_logo{ /*class = 'imagenmedia'*/
+    width:250px;
+    height:240px;
+
+}
+
+#imagen_perfil{ /*class = 'imagenmedia'*/
+    width:280x;
+    height:400px;
+
+}
+
+#imagen_sube{
+    width:240x;
+    height:220px; 
+}
+
+#imagen_tren{
+    width:240x;
+    height:220px;   
+}
+
+#imagen_subo{
+    width:240x;
+    height:220px;   
+}
 
 #menu {
     list-style-type: none;
@@ -74,8 +179,44 @@ body{
     width: 100%;
   }
 
+#footer{
+    display:flex;
+    width: 100vw;
+    justify-content: space-around; 
 
-header ul li {
-    display: inline;
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+}}
+
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+
+  li a:hover {
+    background-color: #111;
+  }
+
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
-
