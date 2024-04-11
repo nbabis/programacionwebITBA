@@ -6,154 +6,254 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniWeb - El sitio web del universitario argentino</title>
 
+
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
+    
 
 </head>
 
 <body> 
-    <header>  
-        <div id = "el_header" class = ''>
-            <ul id = 'menu'>
-                <li><a href="https://www.linkedin.com/in/nicolas-babis/" target="_blank">Linkedin</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-            <br><br><br>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+          <a href="#" class="navbar-brand" ><span class = 'text-primary'>Uni</span>Web</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-start" aria-controls="navbar-start" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" ></span>
+            </button>
 
-            <h1 class = "LetraGrande">
-                UniWeb
-            </h1>
-            <h2 class = 'LetraMediana'>
-                El sitio web del universitario argentino
-            </h2>
-            <h3 class = 'LetraChica'>
-                Funcionalidades para el dia a dia
-            </h3>
-
-        </div>   
-
-    </header> 
-
-
-    <main>
-
-        <div  id = 'noticias_container'>
-            <div class="articulo">
-            <a href="https://www.infobae.com/politica/2024/04/08/camioneros-definira-el-jueves-si-realiza-un-paro-de-48-horas-ante-la-negativa-del-gobierno-de-homologar-la-paritaria/" target="_blank">
-                <img src="./images/camioneros.png" alt="Noticia Camioneros" class = 'noticias '>
-                <h3 class = "LetraLink">Camioneros definirá el jueves si realiza un paro de 48 horas</h3>
-                </a>
-                
+            <div class="collapse navbar-collapse" id = "navbar-start">
+                <ul class = "navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class = "nav-item">
+                        <a class = "nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" href="#noticias">Noticias</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class = "nav-link" href="#recursos">Recursos</a>
+                    </li>
+                </ul>
             </div>
-
-            <div class = "articulo">
-            <a href="https://www.lanacion.com.ar/sociedad/como-registrar-la-tarjeta-sube-a-mi-nombre-nid25012024/" target="_blank">
-                <img src="./images/sube.png" alt="Noticia Sube" class = 'noticias'>
-                <h3 class = "LetraLink">Cómo registrar la tarjeta SUBE a mi nombre</h3>
-                </a>
-                    
-            </div>
-
-            <div class = "articulo">
-                <a href="https://www.pagina12.com.ar/725746-reabrio-la-estacion-facultad-de-medicina-de-la-linea-d-de-su" target="_blank">
-                    <img src="./images/facultadmedicina.png" alt="Noticia SubteD" class = 'noticias'>
-                    <h3 class = "LetraLink">Reabrió la estación Facultad de Medicina de la línea D de subtes</h3>
-                    </a>
-            </div>
-
         </div>
+    </nav>
 
-        <div id = quien_soy>
-            <br><br>
-            <h2 class = 'LetraGrande '>
-                ¿Quien Soy?
-            </h2>
+<main>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./images/sube.jpg" class="d-block w-100" alt="Sube">
+                <div class="carousel-caption">
+                    <h5>Tu guia confiable para moverte por Buenos Aires</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/subte_carusel.jpg" class="d-block w-100" alt="Subte">
+                <div class="carousel-caption">
+                    <h5>Informacion actualizada en el momento</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/tp.jpg" class="d-block w-100" alt="Colectivo">
+                <div class="carousel-caption">
+                    <h5>Deja de correr el bondi, deja que te pase a buscar</h5>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
     
-        <div id = "quien_soy_container" class = ''>
-            <div class = "modelo">
-                <a href="https://emova.com.ar/" target="_blank">
-                <img src="./images/modelo_brazoscruzados.jpg" alt="Estado de Subte" id = 'imagen_perfil'>
-            </a>
-            <h4>
-                <a href="https://www.linkedin.com/in/nicolas-babis/" target="_blank">Nicolas Babis</a>
-            </h4>
+
+    <section id = "noticias" class = 'p-noticia '>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = col-md-12>
+                    <div class = "section-header text-center pb-5">
+                        <h2>Noticias</h2>
+                        <p>Aquí encontrarás las noticias del día de hoy, actualizadas diariamente. <br> ¡Mantente informado!</p>
+                    </div>
+                </div>
+            </div>
             </div>
 
-            <div id = 'texto_quiensoy'>
-                <p>
-                    ¡Hola! Soy Nicolás Babis, un estudiante del Instituto Tecnológico de Buenos Aires (ITBA) que decidió crear esta página web pensando en el día a día del universitario moderno. Mi historia comienza en el barrio de Olivos donde pasé toda mi secundaria a tan solo dos cuadras de casa, pudiendo ir y venir caminando. Sin embargo, al ingresar al ITBA, todo cambió.
-                    
-                    Me enfrenté a la realidad del transporte público, donde cada día implica más de dos horas y media de viaje de ida y vuelta. La adaptación fue todo un desafío, pero me llevó a comprender las necesidades de quienes pasan por lo mismo.
-                    
-                    Esta página no solo busca informarte sobre las últimas noticias relevantes para tu vida universitaria, sino también facilitarte la organización de tus viajes en transporte público. Entiendo lo que es depender de él y quiero hacer tu experiencia un poco más llevadera.
-                    
-                    Espero que este espacio sea útil para ti y que encuentres aquí la información y la ayuda que necesitas para hacer más llevadero tu día a día universitario.
-                    
-                </p>
-                <p class = "LetraChica">
-                    ¡Bienvenido a esta comunidad virtual!
-                </p>
+
+    <section class = "p-recursos">
+
+        <div class = "container">
+
+            <div class = 'row'>
+
+                <div class = "col-12 col-md-12 col-lg-4 mb-3">
+                    <div class = "card text-white text-center card-noticia pb-2">
+                        <div class = "card-body">
+                            <h3 class="card-title">Camioneros en Paro</h3>
+                            <p>
+                                Lo confirmó el secretario adjunto del gremio, Pablo Moyano. Ayer, el ministro del Interior, Guillermo Francos, ratificó que no se convalidará el aumento firmado en febrero de este año. “Las patoteadas ya tienen hartos a los argentinos”, advirtió.
+                            </p>
+                            <a href="https://www.infobae.com/politica/2024/04/08/camioneros-definira-el-jueves-si-realiza-un-paro-de-48-horas-ante-la-negativa-del-gobierno-de-homologar-la-paritaria/" target="_blank" ><button class="btn bg-primary text-white">Leer más</button></a>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class = "col-12 col-md-12 col-lg-4 mb-3">
+                    <div class = "card text-white text-center card-noticia pb-2">
+                        <div class = "card-body">
+                            <h3 class="card-title">Como Registrar la Sube</h3>
+                            <p>
+                                Aquellas personas que no tengan registrada su tarjeta SUBE deberán pagar una tarifa más alta al viajar en transporte público. Los usuarios tendrán tiempo para realizar un sencillo trámite y evitar este costo extra, que implica un aumento del 250 por ciento.
+                            </p>
+                            <a href="https://www.lanacion.com.ar/sociedad/como-registrar-la-tarjeta-sube-a-mi-nombre-nid25012024/" target="_blank"><button class="btn bg-primary text-white">Leer más</button></a>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class = "col-12 col-md-12 col-lg-4 mb-3">
+                    <div class = "card text-white text-center card-noticia pb-2">
+                        <div class = "card-body">
+                            <h3 class="card-title">Facultad de Medicina</h3>
+                            <p>
+                                La Línea D de subte recuperó este lunes la parada en la estación Facultad de Medicina que permaneció cerrada desde el 8 de enero, cuando se inició un proceso de renovación de los sistemas de seguridad. Esta ya quedo habilitada.
+                            </p>
+                            <a href="https://www.pagina12.com.ar/725746-reabrio-la-estacion-facultad-de-medicina-de-la-linea-d-de-su" target="_blank"><button class="btn bg-primary text-white">Leer más</button></a>
+                        </div>
+                    </div>
+                </div>  
+           </div>
+        </div>
+    </section>
+      
+    <section class="section-icons p-recursos">
+        <div class = "container">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-4 box-icons">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-calendar2-date"></i>
+                        <div class="ms-4 text-center">
+                            <h3>Organización</h3>
+                            <p>Organizarse nunca fue tan simple. Con o sin tiempo, llega puntual igual.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-4 box-icons">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-check2-square"></i>
+                        <div class="ms-4 text-center">
+                            <h3>Tranquilidad</h3>
+                            <p>Que un imprevisto no te vuelva a agarrar mal parado. Llegas y te subiste.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-4 box-icons">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-bicycle"></i>
+                        <div class="ms-4 text-center">
+                            <h3>Movimiento</h3>
+                            <p>No dejes que no tener un transporte propio te limite. Disfruta de moverte libremente</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <section id = "recursos" class = 'p-recursos'>
+        <div class = 'container'>
+            <div class = 'row'>
+                <div class = col-md-12>
+                    <div class = "section-header text-center pb-5">
+                        <h2>Recursos</h2>
+                        <p>Aqui encontraras recursos para mantenerte actualizado sobre el estado del transporte público en tiempo real y poder planificar tus viajes. <br> ¡Ingresa clickeando los botones!</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class = "row">
+
+                <div class="col-12 col-md-12 col-lg-3">
+                    <div class = "card bg-light shadow-sm border-0 px-2 py-3 mb-4">
+                        <div class = "text-center">
+                            <img src="./images/cuandosubo.png" alt="cuando subo">
+                        </div>
+                        <div class = "card-body text-center">
+                            <h5 class = "card-title">Cuando Subo</h5>
+                            <p>En esta aplicación puedes obtener información en tiempo real sobre el transporte público, recibir alertas sobre cambios en tu ruta, y mucho más, que te permiten planificar tus viajes con anticipación.
+                            </p>
+                            <a href="https://cuandosubo.sube.gob.ar/onebusaway-webapp/where/iphone/" target="_blank" ><button class="btn bg-primary text-white">Ingresá!</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-12 col-lg-3">
+                    <div class = "card bg-light shadow-sm border-0 px-2 py-3 mb-4">
+                        <div class = "text-center">
+                            <img src="./images/moovit.png" alt="moovit">
+                        </div>
+                        <div class = "card-body text-center">
+                            <h5 class = "card-title">Moovit</h5>
+                            <p>Esta aplicación esta diseñada para simplificar tu experiencia al utilizar el transporte público. Con Moovit, uno puede planificar viajes de manera eficiente y encontrar las mejores rutas y vias disponibles. 
+                            </p>
+                            <a href="https://moovitapp.com/buenos_aires-1602/poi/es-419?metroSeoName=Buenos_Aires&customerId=4908&ref=5&af_sub8=%2Findex%2Fes-419%2Ftransporte_p%25C3%25BAblico-Buenos_Aires-1602&af_sub9=Search%20bar%20button" target="_blank" ><button class="btn bg-primary text-white">Ingresá!</button></a>
+                        </div>
+                    </div>
+                </div>
             
-        
-           
-        
+                <div class="col-12 col-md-12 col-lg-3">
+                    <div class = "card bg-light shadow-sm border-0 px-2 py-3 mb-4">
+                        <div class = "text-center">
+                            <img src="./images/logosubte.png" alt="estado subte">
+                        </div>
+                        <div class = "card-body text-center">
+                            <h5 class = "card-title">Emova</h5>
+                            <p>La aplicación de Emova es una herramienta fundamental para quienes utilizan el subte en la ciudad. Con ella, puedes mantenerte informado sobre el estado y el funcionamiento de las líneas de subte en tiempo real.
+                            </p>
+                            <a href="https://emova.com.ar/" target="_blank" ><button class="btn bg-primary text-white">Ingresá!</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-12 col-lg-3">
+                    <div class = "card bg-light shadow-sm border-0 px-2 py-3 mb-4">
+                        <div class = "text-center">
+                            <img src="./images/trenesargentinos.png" alt="trenes arg">
+                        </div>
+                        <div class = "card-body text-center">
+                            <h5 class = "card-title">Trenes Argentinos</h5>
+                            <p>La aplicación de Trenes Argentinos es una herramienta esencial para aquellos que dependen del sistema ferroviario en Argentina. Con esta app, puedes acceder al estado actualizado de todas las líneas de trenes en tiempo real.
+                            </p>
+                            <a href="https://www.argentina.gob.ar/transporte/trenes-argentinos" target="_blank" ><button class="btn bg-primary text-white">Ingresá!</button></a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            </div> 
-
-
-
-
-    <div id = call_to_action>
-        <h2 class = 'LetraMediana paddingTop paddingBottom'>
-            Información actualizada en el instante
-        </h2>
-        <h4 class = ' LetraChica paddingTop paddingBottom'>
-            ¡Clickea en el recurso que necesites!
-        </h4>
-
-    <div id="call_to_action_conainer" class = 'paddingBottom'>
-        <div><a href="https://emova.com.ar/" target="_blank">
-            <img src="./images/logosubte.png" alt="Estado de Subte" class = 'imagen_logo'>
-        </a></div>
-        <div><a href="https://tarjetasube.sube.gob.ar/SubeWeb/WebForms/Account/Views/Login.aspx" target="_blank">
-            <img src="./images/subeweb.png" alt="Sube" class = 'imagen_logo'>
-        </a></div>
-        <div><a href="https://moovitapp.com/buenos_aires-1602/poi/es-419?metroSeoName=Buenos_Aires&customerId=4908&ref=5&af_sub8=%2Findex%2Fes-419%2Ftransporte_p%25C3%25BAblico-Buenos_Aires-1602&af_sub9=Search%20bar%20button" target="_blank">
-            <img src="./images/moovit.png" alt="Moovit" class = 'imagen_logo'>
-        </a></div>
-        <div><a href="https://www.argentina.gob.ar/transporte/trenes-argentinos" target="_blank">
-            <img src="./images/trenesargentinos.png" alt="Trenes Argentinos" class = 'imagen_logo'>
-        </a></div>
-        <div><a href="https://cuandosubo.sube.gob.ar/onebusaway-webapp/where/iphone/" target="_blank">
-            <img src="./images/cuandosubo.png" alt="Cuando Subo" class = 'imagen_logo'>
-        </a></div>  
-
-   
-
-    
-        </div>   
-    </div>
-
-
-    </div>
-
-    </main>
-
-    <footer>
-        <div id = 'footer'>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet neque, porro laborum quod harum eum labore, maxime expedita itaque aperiam voluptate placeat! Nostrum at pariatur facere voluptatibus, qui architecto error?
-            </p>
-
-
         </div>
 
 
+    </section>
 
+</main>
+
+    <footer class = "bg-dark p-2 text-center">
+        <div class = container>
+            <p class = "text-white">Pagina creada por Nicolás Babis <br> Programación Web - ITBA</p>
+        </div>
     </footer>
+    
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
 </body>
-
 </html>
