@@ -67,6 +67,12 @@ body{
     height: 150px;
 }
 
+.icono-grande {
+    font-size: 8rem; 
+    color:#007bff;
+}
+
+
 @media(max-width: 600px) {
 
     .carousel-item{
