@@ -55,8 +55,8 @@ function abrirCalculadora() {
             if (document.getElementById("selectColectivos").value !== "0") {
                 const selectColectivos = parseInt(document.getElementById("selectColectivos").value);
                 const precioColectivos = parseInt(document.getElementById("precioColectivos").value);
-                if (selectColectivos < 0 || precioColectivos < 0 || precioColectivos > 9999) {
-                    Swal.showValidationMessage('Ingrese valores válidos para colectivos (0-9999)');
+                if (isNaN(selectColectivos) || isNaN(precioColectivos) || selectColectivos < 0 || precioColectivos < 0 || precioColectivos > 9999) {
+                    Swal.showValidationMessage('Ingrese valores válidos para colectivos');
                     return false;
                 }
                 valores.push(selectColectivos, precioColectivos);
@@ -65,8 +65,8 @@ function abrirCalculadora() {
             if (document.getElementById("selectTrenes").value !== "0") {
                 const selectTrenes = parseInt(document.getElementById("selectTrenes").value);
                 const precioTrenes = parseInt(document.getElementById("precioTrenes").value);
-                if (selectTrenes < 0 || precioTrenes < 0 || precioTrenes > 9999) {
-                    Swal.showValidationMessage('Ingrese valores válidos para trenes (0-9999)');
+                if (isNaN(selectTrenes) || isNaN(precioTrenes) || selectTrenes < 0 || precioTrenes < 0 || precioTrenes > 9999) {
+                    Swal.showValidationMessage('Ingrese valores válidos para trenes');
                     return false;
                 }
                 valores.push(selectTrenes, precioTrenes);
@@ -75,8 +75,8 @@ function abrirCalculadora() {
             if (document.getElementById("selectSubtes").value !== "0") {
                 const selectSubtes = parseInt(document.getElementById("selectSubtes").value);
                 const precioSubtes = parseInt(document.getElementById("precioSubtes").value);
-                if (selectSubtes < 0 || precioSubtes < 0 || precioSubtes > 9999) {
-                    Swal.showValidationMessage('Ingrese valores válidos para subtes (0-9999)');
+                if (isNaN(selectSubtes) || isNaN(precioSubtes) || selectSubtes < 0 || precioSubtes < 0 || precioSubtes > 9999) {
+                    Swal.showValidationMessage('Ingrese valores válidos para subtes');
                     return false;
                 }
                 valores.push(selectSubtes, precioSubtes);
@@ -90,6 +90,7 @@ function abrirCalculadora() {
             Swal.fire(`El costo aproximado de su viaje es de ${costo} pesos`);
         }
     });
+
 }
 
 document.getElementById('abrirAlertaCalc1').addEventListener('click', abrirCalculadora);
