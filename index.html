@@ -249,12 +249,29 @@
         </div>
 
         <div class = "section-header text-center pb-5">
-            <h2>Proba el nuevo recurso de UniWeb: La Calculadora de Viajes!!</h2>
+            <h2><u>¡Proba los nuevos recursos de UniWeb!</u></h2>
+            <h3>La Calculadora de Viajes</h3>
             <p>Ingresa haciendo click en el icono de la calculadora (Tambien lo podes encontrar en la barra de navegación)</p>
             <a id="abrirAlertaCalc2" href="#">
                 <i class="bi bi-calculator icono-grande"></i>
             </a>
         </div>
+
+        <div class = "section-header text-center pb-5">
+        <h3>El Planificador de Horarios</h3>
+            <p>Agregá y eliminá eventos para organizar tu tiempo. Ponete alarmas para recibir una notificación 30 minutos antes de tu evento.</p>
+        </div>
+
+        <section id="planificador">
+            <h2>Planificador de Horarios</h2>
+            <form id="evento-form">
+                <input type="text" id="evento-descripcion" placeholder="Descripción del evento" required>
+                <input type="datetime-local" id="evento-fecha-hora" required>
+                <button type="submit">Agregar Evento</button>
+            </form>
+            <div id="calendario-semanal">
+            </div>
+        </section>
 
     </section>
 

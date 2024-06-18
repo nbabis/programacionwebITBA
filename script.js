@@ -108,6 +108,113 @@ function calcular_costo(valores) {
     return costoTotal;
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const eventoForm = document.getElementById('evento-form');
+    const calendarioSemanal = document.getElementById('calendario-semanal');
+
+    eventoForm.addEventListener('submit', agregarEvento);
+
+    function agregarEvento(e) {
+        e.preventDefault();
+
+        const descripcion = document.getElementById('evento-descripcion').value;
+        const fechaHora = document.getElementById('evento-fecha-hora').value;
+
+        if (descripcion && fechaHora) {
+            const evento = {
+                descripcion,
+                fechaHora,
+                alarma: false
+            };
+
+            guardarEvento(evento);
+            mostrarEventos();
+            eventoForm.reset();
+        }
+    }
+
+    function guardarEvento(evento) {
+        let eventos = JSON.parse(localStorage.getItem('eventos')) || [];
+        eventos.push(evento);
+        localStorage.setItem('eventos', JSON.stringify(eventos));
+    }
+
+    function mostrarEventos() {
+        calendarioSemanal.innerHTML = '';
+        const eventos = JSON.parse(localStorage.getItem('eventos')) || [];
+
+        eventos.forEach(evento => {
+            const div = document.createElement('div');
+            div.classList.add('evento');
+            div.innerHTML = `
+                <p>${evento.descripcion}</p>
+                <p>${new Date(evento.fechaHora).toLocaleString()}</p>
+                <button class="eliminar-btn" data-fecha="${evento.fechaHora}">Eliminar</button>
+                <button class="alarma-btn" data-fecha="${evento.fechaHora}">${evento.alarma ? 'Desactivar Alarma' : 'Activar Alarma'}</button>
+            `;
+            calendarioSemanal.appendChild(div);
+        });
+
+        document.querySelectorAll('.eliminar-btn').forEach(btn => {
+            btn.addEventListener('click', eliminarEvento);
+        });
+
+        document.querySelectorAll('.alarma-btn').forEach(btn => {
+            btn.addEventListener('click', toggleAlarma);
+        });
+    }
+
+    function eliminarEvento(e) {
+        const fechaHora = e.target.getAttribute('data-fecha');
+        let eventos = JSON.parse(localStorage.getItem('eventos')) || [];
+        eventos = eventos.filter(evento => evento.fechaHora !== fechaHora);
+        localStorage.setItem('eventos', JSON.stringify(eventos));
+        mostrarEventos();
+    }
+
+    function toggleAlarma(e) {
+        const fechaHora = e.target.getAttribute('data-fecha');
+        let eventos = JSON.parse(localStorage.getItem('eventos')) || [];
+        const evento = eventos.find(evento => evento.fechaHora === fechaHora);
+        
+        if (evento) {
+            evento.alarma = !evento.alarma;
+            if (evento.alarma) {
+                programarAlarma(evento);
+            }
+        }
+
+        localStorage.setItem('eventos', JSON.stringify(eventos));
+        mostrarEventos();
+    }
+
+    function programarAlarma(evento) {
+        const tiempoActual = new Date().getTime();
+        const tiempoEvento = new Date(evento.fechaHora).getTime();
+        const tiempoAlarma = tiempoEvento - (30 * 60 * 1000); 
+
+        if (tiempoAlarma > tiempoActual) {
+            setTimeout(() => {
+                mostrarNotificacion(evento.descripcion);
+            }, tiempoAlarma - tiempoActual);
+        }
+    }
+
+    function mostrarNotificacion(descripcion) {
+        if (Notification.permission === 'granted') {
+            new Notification('Recordatorio de Evento', {
+                body: `El evento "${descripcion}" comenzará en 30 minutos.`
+            });
+        }
+    }
+
+    if (Notification.permission !== 'granted') {
+        Notification.requestPermission();
+    }
+
+    mostrarEventos();
+});
+
 
 
 
